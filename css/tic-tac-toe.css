@@ -88,3 +88,28 @@ body {
   border-radius: 10px;
 
 }
+
+.changeBg {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7px;
+  margin: 0 auto;
+  /* height: 30px; */
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  max-width: 140px;
+  border: 1px solid #fff;
+  outline: none;
+  color: white;
+  background: none;
+  border-radius: 10px;
+
+}
+
+.changeBg:hover {
+  background: white;
+  color: black;
+}

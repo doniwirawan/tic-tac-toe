@@ -1,6 +1,6 @@
 // dom declaration here
 const modal = document.querySelector('#modal');
-
+const changeBg = document.querySelector('#changeBg');
 
 /**
  * Tic Tac Toe
@@ -147,3 +147,17 @@ function set() {
 }
 
 init();
+
+// change background function
+function changeBackground() {
+  fetch('https://api.unsplash.com/photos/random?client_id=gfXzHUZJnwnsObUFyB0hxiOMXrt_nA4V7UyjpCrRK6w')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.urls.regular);
+      const bgEl = document.querySelector('body');
+      bgEl.style.backgroundImage = `url('${data.urls.regular}')`;
+    })
+}
+
+// event listener for changbg button
+changeBg.addEventListener('click', changeBackground);
