@@ -135,11 +135,9 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-    // alert('Winner: Player ' + turn);
-    showModal('Winner: Player ' + turn)
+    showModal(`Player ${turn} Win`);
     startNewGame();
   } else if (moves === N_SIZE * N_SIZE) {
-    // alert('Draw');
     showModal('Draw')
     startNewGame();
   } else {
