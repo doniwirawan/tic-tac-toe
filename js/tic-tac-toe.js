@@ -1,3 +1,7 @@
+// dom declaration here
+const modal = document.querySelector('#modal');
+
+
 /**
  * Tic Tac Toe
  *
@@ -92,6 +96,33 @@ function contains(selector, text) {
     return RegExp(text).test(element.textContent);
   });
 }
+/**
+ * 
+ * showing modal when player win or drow
+ */
+function showModal(innerText) {
+
+  modal.style.display = 'block';
+
+  modal.innerHTML = `
+      <div class="modal-head">
+        <h1>${innerText}</h1>
+      </div>
+      <button class="close-btn">Close</button>
+  `;
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // after 3s the modal will automatically disppear
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 3000);
+}
+
+
+
+
 
 /**
  * Sets clicked square and also updates the turn.
@@ -104,10 +135,12 @@ function set() {
   moves += 1;
   score[turn] += this.identifier;
   if (win(this)) {
-    alert('Winner: Player ' + turn);
+    // alert('Winner: Player ' + turn);
+    showModal('Winner: Player ' + turn)
     startNewGame();
   } else if (moves === N_SIZE * N_SIZE) {
-    alert('Draw');
+    // alert('Draw');
+    showModal('Draw')
     startNewGame();
   } else {
     turn = turn === 'X' ? 'O' : 'X';
