@@ -1,4 +1,9 @@
-// dom declaration here
+/**
+ * 
+ * DOM Declaration Here
+ * 
+ * 
+ */
 const modal = document.querySelector('#modal');
 const changeBg = document.querySelector('#changeBg');
 
@@ -148,7 +153,13 @@ function set() {
 
 init();
 
-// change background function
+/**
+ * 
+ * Change Background Function
+ * 
+ * Unsplash API to get pictures
+ * 
+ */
 function changeBackground() {
   fetch('https://api.unsplash.com/photos/random?client_id=gfXzHUZJnwnsObUFyB0hxiOMXrt_nA4V7UyjpCrRK6w')
     .then(response => response.json())
@@ -159,5 +170,9 @@ function changeBackground() {
     })
 }
 
-// event listener for changbg button
+/**
+ * 
+ * When the Change Background button clicked
+ * 
+ */
 changeBg.addEventListener('click', changeBackground);
