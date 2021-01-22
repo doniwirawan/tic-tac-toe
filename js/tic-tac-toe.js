@@ -103,7 +103,7 @@ function contains(selector, text) {
 }
 /**
  * 
- * showing modal when player win or drow
+ * showing modal when player win or draw
  */
 function showModal(innerText) {
 
@@ -119,7 +119,7 @@ function showModal(innerText) {
     modal.style.display = 'none';
   });
 
-  // after 3s the modal will automatically disppear
+  // after 3s the modal will automatically disappear
   setTimeout(() => {
     modal.style.display = 'none';
   }, 3000);
